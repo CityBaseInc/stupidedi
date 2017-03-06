@@ -302,6 +302,11 @@ module Stupidedi
           autoload :SCH,
             "stupidedi/versions/functional_groups/004010/segment_defs/SCH"
 
+          autoload :ENT,
+            "stupidedi/versions/functional_groups/004010/segment_defs/ENT"
+
+          autoload :RMR,
+            "stupidedi/versions/functional_groups/004010/segment_defs/RMR"
         end
       end
     end

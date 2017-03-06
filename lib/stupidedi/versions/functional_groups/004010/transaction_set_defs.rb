@@ -9,6 +9,9 @@ module Stupidedi
           # 004010X091A1 Health Care Claim Payment/Advice
           autoload :HP835, # Health Care Claim Payment/Advice
             "stupidedi/versions/functional_groups/004010/transaction_set_defs/HP835"
+
+          autoload :STP820, # Payment Order/Remittance Advice
+            "stupidedi/versions/functional_groups/004010/transaction_set_defs/STP820"
         end
       end
     end
