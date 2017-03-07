@@ -85,7 +85,17 @@ module Stupidedi
                   b::Element(e::Required,    "Reference Identification Qualifier", b::Values("BAF", "3J", "OF")),
                   b::Element(e::Required,    "Reference Identfication"),
                   b::Element(e::Situational, "Description"),
-                  b::Element(e::NotUsed,     ""))))))
+                  b::Element(e::NotUsed,     ""))
+              )
+            )
+          ),
+
+          d::TableDef.detail("Table 3 - Summary",
+            b::Segment(10, s::SE, "Transaction Set Trailer",
+              r::Required, d::RepeatCount.bounded(1),
+              b::Element(e::Required,    "Transaction Segment Count"),
+              b::Element(e::Required,    "Transaction Set Control Number"))))
+
       end
     end
   end
