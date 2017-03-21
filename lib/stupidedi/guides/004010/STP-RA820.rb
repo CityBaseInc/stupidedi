@@ -82,7 +82,7 @@ module Stupidedi
                   b::Element(e::Situational, "Monetary Amount")),
                 b::Segment(170, s::REF, "Reference Identification",
                   r::Situational, d::RepeatCount.bounded(3),
-                  b::Element(e::Required,    "Reference Identification Qualifier", b::Values("BAF", "3J", "OF")),
+                  b::Element(e::Required,    "Reference Identification Qualifier", b::Values("BAF", "3J", "OF", "8X")),
                   b::Element(e::Required,    "Reference Identfication"),
                   b::Element(e::Situational, "Description"),
                   b::Element(e::NotUsed,     ""))
