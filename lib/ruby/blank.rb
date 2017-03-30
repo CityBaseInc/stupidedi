@@ -13,11 +13,11 @@ module Stupidedi
       #
       def blank?
         self !~ /\S/
-      end
+      end unless method_defined?(:blank?)
 
       def present?
         self =~ /\S/
-      end
+      end unless method_defined?(:present?)
     end
 
     refine NilClass do
@@ -28,11 +28,11 @@ module Stupidedi
       #
       def blank?
         true
-      end
+      end unless method_defined?(:blank?)
 
       def present?
         false
-      end
+      end unless method_defined?(:present?)
     end
 
     refine Object do
@@ -44,11 +44,11 @@ module Stupidedi
       #
       def blank?
         false
-      end
+      end unless method_defined?(:blank?)
 
       def present?
         true
-      end
+      end unless method_defined?(:present?)
     end
 
   end

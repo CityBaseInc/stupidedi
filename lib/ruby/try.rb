@@ -23,7 +23,7 @@ module Stupidedi
         else
           __send__(*args, &block)
         end
-      end
+      end unless method_defined?(:try)
     end
 
     refine NilClass do
@@ -42,7 +42,7 @@ module Stupidedi
       # @return nil
       def try(*args)
         self
-      end
+      end unless method_defined?(:try)
     end
 
   end

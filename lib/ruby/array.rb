@@ -6,11 +6,11 @@ module Stupidedi
     refine Array do
       def blank?
         empty?
-      end
+      end unless method_defined?(:blank?)
 
       def present?
         not empty?
-      end
+      end unless method_defined?(:present?)
 
       # Return the first item. Raises an `IndexError` if the Array is `empty?`.
       #
