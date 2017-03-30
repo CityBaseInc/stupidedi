@@ -1,4 +1,6 @@
 require "pathname"
+require 'gemfury/tasks'
+
 abspath = Pathname.new(File.dirname(__FILE__)).expand_path
 relpath = abspath.relative_path_from(Pathname.pwd)
 
@@ -111,4 +113,11 @@ rescue LoadError => e
     warn "  #{e}"
     exit 1
   end
+end
+
+Rake::Task['release'].clear
+
+desc "Tag and release to gemfury under the 'citybase' organization"
+task 'release' => 'release:source_control_push' do
+  Rake::Task['fury:release'].invoke('apc_api.gemspec', 'citybase')
 end
