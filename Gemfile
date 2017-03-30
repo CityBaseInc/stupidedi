@@ -18,6 +18,8 @@ group :development do
   # Older versions of Bundler fail because :ruby_22 isn't allowed
   gem "simplecov"              ,:platforms => [:ruby_22] if RUBY_VERSION >= "2.2.0"
 
+  gem 'gemfury'
+
   # We're using a patched version installed in yard/ until the
   # maintainer improves the plugin. The patch has been submitted
   # to the author.

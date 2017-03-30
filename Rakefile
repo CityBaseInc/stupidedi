@@ -1,6 +1,6 @@
-require "pathname"
-require 'gemfury/tasks'
+require 'bundler/gem_tasks'
 
+require "pathname"
 abspath = Pathname.new(File.dirname(__FILE__)).expand_path
 relpath = abspath.relative_path_from(Pathname.pwd)
 
@@ -115,9 +115,19 @@ rescue LoadError => e
   end
 end
 
-Rake::Task['release'].clear
+begin
+  require 'gemfury/tasks'
 
-desc "Tag and release to gemfury under the 'citybase' organization"
-task 'release' => 'release:source_control_push' do
-  Rake::Task['fury:release'].invoke('apc_api.gemspec', 'citybase')
+  Rake::Task['release'].clear
+
+  desc "Tag and release to gemfury under the 'citybase' organization"
+  task 'release' => 'release:source_control_push' do
+    Rake::Task['fury:release'].invoke('stupidedi.gemspec', 'citybase')
+  end
+rescue LoadError => e
+  task :release do
+    warn "couldn't load gemfury:"
+    warn "  #{e}"
+    exit 1
+  end
 end
