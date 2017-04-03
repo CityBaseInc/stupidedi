@@ -36,8 +36,8 @@ module Stupidedi
             e::E569 .simple_use(r::Optional,   s::RepeatCount.bounded(1)),
             e::E508 .simple_use(r::Relational, s::RepeatCount.bounded(1)),
 
-            SyntaxNotes::P.build( 6,  7),
-            SyntaxNotes::C.build( 8,  9),
+            #SyntaxNotes::P.build( 6,  7),
+            #SyntaxNotes::C.build( 8,  9),
             SyntaxNotes::P.build(12, 13),
             SyntaxNotes::C.build(14, 15),
             SyntaxNotes::P.build(18, 19),
