@@ -14,13 +14,6 @@ module Stupidedi
     end
 
     refine String do
-      BIGDECIMAL = /\A[+-]?            (?# optional leading sign            )
-                    (?:
-                      (?:\d+\.?\d*)  | (?# whole with optional decimal or ..)
-                      (?:\d*?\.?\d+) ) (?# optional whole with decimal      )
-                    (?:E[+-]?\d+)?     (?# optional exponent                )
-                   \Z/ix
-
       # Converts the string to a BigDecimal after validating the format. If the
       # string does not match the pattern for a valid number, an `ArgumentError`
       # is raised.
@@ -30,7 +23,13 @@ module Stupidedi
       #
       # @return [BigDecimal]
       def to_d
-        if BIGDECIMAL =~ self
+        bigdecimal_regexp = /\A[+-]?            (?# optional leading sign            )
+                             (?:
+                               (?:\d+\.?\d*)  | (?# whole with optional decimal or ..)
+                               (?:\d*?\.?\d+) ) (?# optional whole with decimal      )
+                             (?:E[+-]?\d+)?     (?# optional exponent                )
+                            \Z/ix
+        if bigdecimal_regexp =~ self
           BigDecimal(to_s)
         else
           raise ArgumentError, "#{inspect} is not a valid number"
