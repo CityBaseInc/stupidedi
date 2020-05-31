@@ -31,7 +31,7 @@ module Stupidedi
               b::Element(e::Required,    "Date")),
             b::Segment(40, s::CUR, "Currency",
               r::Situational, d::RepeatCount.bounded(1),
-              b::Element(e::Required,    "Entity Identifier Code", b::Values("BT","BY","CN","SH","SF","ST"),
+              b::Element(e::Required,    "Entity Identifier Code", b::Values("BT","BY","CN","SH","SF","ST")),
               b::Element(e::Required,    "Currency Code")),
             b::Segment(50, s::REF, "Reference Identification",
               r::Situational, d::RepeatCount.unbounded,
@@ -125,7 +125,7 @@ module Stupidedi
             b::Segment(30, s:: SE, "Transaction Set Trailer",
               r::Required, d::RepeatCount.bounded(1),
               b::Element(e::Required,    "Number of Included Segments"),
-              b::Element(e::Required,    "Transaction Set Control Number")))))
+              b::Element(e::Required,    "Transaction Set Control Number"))))
 
       end
     end
