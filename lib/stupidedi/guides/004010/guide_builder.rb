@@ -50,9 +50,10 @@ module Stupidedi
 
         # @return [SegmentUse]
         def Segment(position, segment_def, name, requirement, repeat_count, *elements)
-          unless elements.length == segment_def.element_uses.length
+          num_required_elements = segment_def.element_uses.count{|x| x.required? }
+          unless elements.length >= num_required_elements
             raise Exceptions::InvalidSchemaError,
-              "segment #{segment_def.id} has #{segment_def.element_uses.length}" +
+              "segment #{segment_def.id} has #{num_required_elements} required" +
               " elements but #{elements.length} arguments were specified"
           end
 

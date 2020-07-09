@@ -31,7 +31,7 @@ module Stupidedi
               b::Element(e::Required,    "Date - Horizon End Date"),
               b::Element(e::Required,    "Date - Release Issue Date"),
               b::Element(e::Required,    "Date"),
-              b::Element(e::Situational,  "Purchase Order Number"))
+              b::Element(e::Situational,  "Purchase Order Number")),
 
             # b::Segment(30, s::NTE, "Note/Special Instruction",
             #   r::Situational, d::RepeatCount.bounded(100),
@@ -161,7 +161,7 @@ module Stupidedi
             b::Segment(20, s:: SE, "Transaction Set Trailer",
               r::Required, d::RepeatCount.bounded(1),
               b::Element(e::Required, "Number of Included Segments"),
-              b::Element(e::Required, "Transaction Set Control Number"))))
+              b::Element(e::Required, "Transaction Set Control Number")))))
 
       end
     end
