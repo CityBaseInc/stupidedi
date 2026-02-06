@@ -19,7 +19,6 @@ Gem::Specification.new do |s|
                         Dir.glob("doc/**/*.md") +
                         %w(Rakefile README.md)
   s.test_files        = Dir.glob("spec/examples/**/*.example")
-  s.has_rdoc          = false
   s.bindir            = "bin"
   s.executables       = ["edi-pp", "edi-ed"]
   s.require_path      = "lib"

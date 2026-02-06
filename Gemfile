@@ -1,28 +1,14 @@
-source "http://rubygems.org"
+source "https://rubygems.org"
 
 gem "cantor", "~> 1.2.1"
 
 group :development do
   gem "rake"
-  gem "rspec"      ,"3.4.0"
+  gem "rspec", "~> 3.12"
   gem "rspec-collection_matchers"
-  gem "yard"       ,"~> 0.8.7"
-  gem "redcarpet"  ,"~> 3.3.4"
-
-
+  gem "yard", "~> 0.9"
+  gem "redcarpet", "~> 3.6"
   gem "term-ansicolor"
-  gem "blankslate"             ,:platforms => [:ruby_18, :mri_18, :mingw_18]
-  gem "rcov"       ,"~> 0.9.9" ,:platforms => [:mri_18]
-  gem "simplecov"              ,:platforms => [:ruby_19, :ruby_20, :ruby_21]
-
-  # Older versions of Bundler fail because :ruby_22 isn't allowed
-  gem "simplecov"              ,:platforms => [:ruby_22] if RUBY_VERSION >= "2.2.0"
-
-  gem 'gemfury'
-
-  # We're using a patched version installed in yard/ until the
-  # maintainer improves the plugin. The patch has been submitted
-  # to the author.
-  #
-  # gem "yard-rspec", "~> 0.1"
+  gem "simplecov"
+  gem "gemfury"
 end
